@@ -1,0 +1,15 @@
+{
+"Version": "2012-10-17",
+"Statement": [{
+  "Effect":"Allow",
+  "Action": "ec2:DeleteVpcPeeringConnection",
+  "Resource": "arn:aws:ec2:region:444455556666:vpc-peering-connection/*",
+   "Condition": {
+    "ArnNotEquals": {
+     "ec2:AccepterVpc": "arn:aws:ec2:region:444455556666:vpc/vpc-1a2b3c4d",
+     "ec2:RequesterVpc": "arn:aws:ec2:region:444455556666:vpc/vpc-1a2b3c4d"
+    }
+   }
+  }
+ ]
+}

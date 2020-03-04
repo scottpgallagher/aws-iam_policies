@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "rds:Describe*",
+                "rds:ListTagsForResource"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": "rds:CreateDBSnapshot",
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:rds:us-*:*:db:*",
+                "arn:aws:rds:us-*:*:snapshot:*"
+            ]
+        }
+    ]
+}

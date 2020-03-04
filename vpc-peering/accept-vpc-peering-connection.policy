@@ -1,0 +1,24 @@
+{
+"Version": "2012-10-17",
+"Statement":[{
+ "Effect":"Allow",
+ "Action": "ec2:AcceptVpcPeeringConnection",
+ "Resource": "arn:aws:ec2:region:account:vpc-peering-connection/*",
+  "Condition": {
+   "ArnEquals": {
+    "ec2:RequesterVpc": "arn:aws:ec2:region:444455556666:vpc/*"
+   }
+  }
+ },
+ {
+ "Effect": "Allow",
+ "Action": "ec2:AcceptVpcPeeringConnection",
+ "Resource": "arn:aws:ec2:region:account:vpc/*",
+  "Condition": {
+   "StringEquals": {
+    "ec2:ResourceTag/Purpose": "Peering"
+    }
+   }
+  }
+ ]
+}

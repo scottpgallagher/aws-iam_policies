@@ -1,0 +1,28 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": [
+         "arn:aws:ec2:region:account:instance/*"
+      ],
+      "Condition": {
+         "StringEquals": {
+            "ec2:InstanceType": ["t2.micro", "t2.small"]
+         }
+      }
+   },
+   {
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": [
+         "arn:aws:ec2:region::image/ami-*",
+         "arn:aws:ec2:region:account:subnet/*",
+         "arn:aws:ec2:region:account:network-interface/*",
+         "arn:aws:ec2:region:account:volume/*",
+         "arn:aws:ec2:region:account:key-pair/*",
+         "arn:aws:ec2:region:account:security-group/*"
+         ]
+      }
+   ]
+}

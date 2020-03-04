@@ -1,0 +1,17 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": [
+        "arn:aws:ec2:region::image/ami-*",
+        "arn:aws:ec2:region:account:instance/*",
+        "arn:aws:ec2:region:account:subnet/subnet-1a2b3c4d",
+        "arn:aws:ec2:region:account:network-interface/*",
+        "arn:aws:ec2:region:account:volume/*",
+        "arn:aws:ec2:region:account:key-pair/*",
+        "arn:aws:ec2:region:account:security-group/sg-123abc123"
+      ]
+    }
+   ]
+}

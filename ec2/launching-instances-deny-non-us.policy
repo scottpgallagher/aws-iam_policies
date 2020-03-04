@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "ec2:*",
+            "Effect": "Deny",
+            "Resource": "*",
+            "Condition": {
+                "StringNotLike": {
+                    "ec2:Region": "us-*"
+                }
+            }
+        }
+    ]
+}
